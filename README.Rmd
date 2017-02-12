@@ -1,0 +1,52 @@
+---
+title: "textstem"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  md_document:
+    toc: true      
+---
+
+```{r, echo=FALSE}
+desc <- suppressWarnings(readLines("DESCRIPTION"))
+regex <- "(^Version:\\s+)(\\d+\\.\\d+\\.\\d+)"
+loc <- grep(regex, desc)
+ver <- gsub(regex, "\\2", desc[loc])
+verbadge <- sprintf('<a href="https://img.shields.io/badge/Version-%s-orange.svg"><img src="https://img.shields.io/badge/Version-%s-orange.svg" alt="Version"/></a></p>', ver, ver)
+````
+
+[![Build Status](https://travis-ci.org/trinker/textstem.svg?branch=master)](https://travis-ci.org/trinker/textstem)
+[![Coverage Status](https://coveralls.io/repos/trinker/textstem/badge.svg?branch=master)](https://coveralls.io/r/trinker/textstem?branch=master)
+`r verbadge`
+
+**textstem** is a tool-set for stemming and lemmatizing words.  Stemming is a process that removes endings such as suffixes.  Lemmatization is the process of reducing words to base form.
+
+# Functions
+
+The main functions, task category, & descriptions are summarized in the table below:
+
+
+| Function                      | Task        | Description                                | 
+|-------------------------------|-------------|--------------------------------------------| 
+| `make_lemma_dictionary_words` | stemming    | Generate a dictionary of lemmas for a text | 
+| `stem_words`                  | stemming    | Stem words                                 | 
+| `stem_strings`                | stemming    | Stem strings                               | 
+  
+
+
+# Installation
+
+To download the development version of **textstem**:
+
+Download the [zip ball](https://github.com/trinker/textstem/zipball/master) or [tar ball](https://github.com/trinker/textstem/tarball/master), decompress and run `R CMD INSTALL` on it, or use the **pacman** package to install the development version:
+
+```r
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load_gh("trinker/textstem")
+```
+
+# Contact
+
+You are welcome to:    
+- submit suggestions and bug-reports at: <https://github.com/trinker/textstem/issues>    
+- send a pull request on: <https://github.com/trinker/textstem/>    
+- compose a friendly e-mail to: <tyler.rinker@gmail.com>    

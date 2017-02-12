@@ -1,0 +1,16 @@
+language: r
+sudo: false
+cache: packages
+r_build_args: "--resave-data=best"
+env:
+   global:
+     - DISPLAY=:99.0
+
+r_github_packages: 
+  - jimhester/covr
+
+before_install:
+  - sh -e /etc/init.d/xvfb start
+
+after_success:
+  - Rscript -e 'covr::coveralls()'
