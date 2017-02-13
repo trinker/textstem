@@ -9,7 +9,7 @@ stem_strings(x, language = "porter", ...)
 \arguments{
 \item{x}{A vector of strings.}
 
-\item{language}{The name of a recognized language (see 
+\item{language}{The name of a recognized language (see
 \code{\link[SnowballC]{wordStem}}).}
 
 \item{\ldots}{Other arguments passed to \code{\link[textshape]{split_token}}.}
@@ -20,17 +20,25 @@ Returns a vector of stemmed strings.
 \description{
 Stem a vector of strings.
 }
+\note{
+The stemmer requires splitting the string apart into tokens.  After the
+stemming occurs the strings are pasted back together.  The strings are not
+guaranteed to retain exact spacing of the original.
+}
 \examples{
-stem_strings(
-    c(
-        NA, 
-        "The doggies, well they aren't joyfully running.", 
-        "The daddies are coming over...", 
-        "This is 34.546 above"
-    )
+x <- c(
+    'the dirtier dog has eaten the pies',
+    'that shameful pooch is tricky and sneaky',
+    "He opened and then reopened the food bag",
+    'There are skies of blue and red roses too!',
+    NA,
+    "The doggies, well they aren't joyfully running.",
+    "The daddies are coming over...",
+    "This is 34.546 above"
 )
+stem_strings(x)
 }
 \seealso{
-\code{\link[textclean]{stem_words}}
+\code{\link[textstem]{stem_words}}
 }
 

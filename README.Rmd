@@ -18,7 +18,7 @@ verbadge <- sprintf('<a href="https://img.shields.io/badge/Version-%s-orange.svg
 [![Coverage Status](https://coveralls.io/repos/trinker/textstem/badge.svg?branch=master)](https://coveralls.io/r/trinker/textstem?branch=master)
 `r verbadge`
 
-**textstem** is a tool-set for stemming and lemmatizing words.  Stemming is a process that removes endings such as suffixes.  Lemmatization is the process of reducing words to base form.
+**textstem** is a tool-set for stemming and lemmatizing words.  Stemming is a process that removes affixes.  Lemmatization is the process of reducing words to base form.
 
 # Functions
 
@@ -27,10 +27,11 @@ The main functions, task category, & descriptions are summarized in the table be
 
 | Function                      | Task        | Description                                | 
 |-------------------------------|-------------|--------------------------------------------| 
-| `make_lemma_dictionary_words` | stemming    | Generate a dictionary of lemmas for a text | 
 | `stem_words`                  | stemming    | Stem words                                 | 
 | `stem_strings`                | stemming    | Stem strings                               | 
-  
+| `lemmatize_words`             | lemmatizing | Lemmatize words                            | 
+| `lemmatize_strings`           | lemmatizing | Lemmatize strings                          | 
+| `make_lemma_dictionary_words` | lemmatizing | Generate a dictionary of lemmas for a text |     
 
 
 # Installation

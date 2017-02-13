@@ -1,24 +1,16 @@
 Package: textstem
 Title: Tools for Stemming and Lemmatizing Text
 Version: 0.0.1
-Authors@R: c(person("Tyler", "Rinker", email = "tyler.rinker@gmail.com", role = c("aut", "cre")))
+Authors@R: c(person("Tyler", "Rinker", email =
+        "tyler.rinker@gmail.com", role = c("aut", "cre")))
 Maintainer: Tyler Rinker <tyler.rinker@gmail.com>
-Description: Tools that stem and lemmatize text.  Stemming is a process that
-    removes endings such as suffixes.  Lemmatization is the process of
-    reducing words to base form.
-Depends:
-    R (>= 3.3.2)
-Imports:
-    dplyr,
-    hunspell,
-    koRpus,
-    quanteda,
-    SnowballC,
-    textshape,
-    utils
-Suggests:
-    testthat
-Date: 2017-02-11
+Description: Tools that stem and lemmatize text.  Stemming is a process
+        that removes endings such as affixes.  Lemmatization is the
+        process of reducing words to base form.
+Depends: R (>= 3.3.2)
+Imports: dplyr, hunspell, koRpus, lexicon, quanteda, SnowballC, textshape, utils
+Suggests: testthat
+Date: 2017-02-12
 License: GPL-2
 LazyData: TRUE
 Roxygen: list(wrap = FALSE)

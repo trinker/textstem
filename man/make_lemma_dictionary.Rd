@@ -2,21 +2,41 @@
 % Please edit documentation in R/make_lemma_dictionary.R
 \name{make_lemma_dictionary}
 \alias{make_lemma_dictionary}
-\title{x <- c('the dirtier dog has eaten the pies',
-    'that shameful pooch is tricky and sneaky',
-    'There are skies of blue and red roses too!'
-)
-make_lemma_dictionary(x)
-make_lemma_dictionary(x, engine = 'treetagger')}
+\title{Generate a Lemma Dictionary}
 \usage{
 make_lemma_dictionary(..., engine = "hunspell", path = NULL)
 }
+\arguments{
+\item{engine}{One of: "hunspell", "treetragger" or "lexicon".  The lexicon and hunspell choices use
+the \pkg{lexicon} and \pkg{hunspell} packages, which may be faster than
+TreeTagger, have the tooling available without installing external tools but
+are likely less accurate.  TreeTagger is likely more accurate but requires installing
+the \href{http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger}{TreeTagger}
+program (\url{http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger}.}
+
+\item{path}{Path to the TreeTagger program if \code{engine = "treetagger"}.
+If \code{NULL} \code{textstem} will attempt to locate the location of
+TreeTagger.}
+
+\item{\ldots}{A vector of texts to generate lemmas for.}
+}
+\value{
+Returns a two column \code{\link[base]{data.frame}} with tokens and
+corresponding lemmas.
+}
 \description{
+Given a set of text strings, the function generates a dictionary of lemmas
+corresponding to words that are not in base form.
+}
+\examples{
 x <- c('the dirtier dog has eaten the pies',
     'that shameful pooch is tricky and sneaky',
+    "He opened and then reopened the food bag",
     'There are skies of blue and red roses too!'
 )
 make_lemma_dictionary(x)
+\dontrun{
 make_lemma_dictionary(x, engine = 'treetagger')
+}
 }
 

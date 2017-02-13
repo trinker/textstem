@@ -9,7 +9,7 @@ stem_words(x, language = "porter", ...)
 \arguments{
 \item{x}{A vector of words.}
 
-\item{language}{The name of a recognized language (see 
+\item{language}{The name of a recognized language (see
 \code{\link[SnowballC]{wordStem}}).}
 
 \item{\ldots}{ignored.}
