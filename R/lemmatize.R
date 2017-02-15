@@ -9,7 +9,7 @@
 #' uses \code{\link[lexicon]{hash_lemmas}}.  This may come from
 #' \code{\link[textstem]{make_lemma_dictionary}} as well, giving a more
 #' targetted, smaller dictionary.  \code{\link[textstem]{make_lemma_dictionary}}
-#' has schoices in \code{engine}s to use for the lemmatization.
+#' has choices in \code{engine}s to use for the lemmatization.
 #' @param \ldots ignored.
 #' @return Returns a vector of lemmatized words.
 #' @export

@@ -8,7 +8,7 @@
 \title{Tools for Stemming and Lemmatizing Text}
 \description{
 Tools that stem and lemmatize text.  Stemming is a process that removes
-endings such as suffixes.  Lemmatization is the process of reducing words to
-base form.
+endings such as suffixes.  Lemmatization is the process of grouping 
+inflected forms together as a single base form.
 }
 

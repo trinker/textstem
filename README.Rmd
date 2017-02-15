@@ -22,7 +22,7 @@ nw <- numform::f_comma(sum(stringi::stri_count_words(presidential_debates_2012$d
 [![Coverage Status](https://coveralls.io/repos/trinker/textstem/badge.svg?branch=master)](https://coveralls.io/r/trinker/textstem?branch=master)
 `r verbadge`
 
-**textstem** is a tool-set for stemming and lemmatizing words.  Stemming is a process that removes affixes.  Lemmatization is the process of reducing words to base form.  
+**textstem** is a tool-set for stemming and lemmatizing words.  Stemming is a process that removes affixes.   Lemmatization is the process of grouping inflected forms together as a single base form.  
 
 # Functions
 
@@ -116,7 +116,7 @@ lemma_dictionary_hs <- make_lemma_dictionary(y, engine = 'hunspell')
 lemmatize_strings(y, dictionary = lemma_dictionary_hs)
 ```
 
-This lemmatization uses the [**koRpus**](https://CRAN.R-project.org/package=koRpus) package and the [TreeTagger](http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/) program to generate lemmas.
+This lemmatization uses the [**koRpus**](https://CRAN.R-project.org/package=koRpus) package and the [TreeTagger](http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/) program to generate lemmas.  You'll have to get TreeTagger set up, preferably in your machine's the root directory.
 
 ```{r}
 lemma_dictionary_tt <- make_lemma_dictionary(y, engine = 'treetagger')

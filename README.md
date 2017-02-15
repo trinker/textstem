@@ -10,7 +10,7 @@ Status](https://coveralls.io/repos/trinker/textstem/badge.svg?branch=master)](ht
 </p>
 **textstem** is a tool-set for stemming and lemmatizing words. Stemming
 is a process that removes affixes. Lemmatization is the process of
-reducing words to base form.
+grouping inflected forms together as a single base form.
 
 
 Table of Contents
@@ -191,7 +191,8 @@ generate lemmas.
 This lemmatization uses the
 [**koRpus**](https://CRAN.R-project.org/package=koRpus) package and the
 [TreeTagger](http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/)
-program to generate lemmas.
+program to generate lemmas. You'll have to get TreeTagger set up,
+preferably in your machine's the root directory.
 
     lemma_dictionary_tt <- make_lemma_dictionary(y, engine = 'treetagger')
     lemmatize_strings(y, lemma_dictionary_tt)
@@ -222,6 +223,6 @@ It's pretty fast too. Observe:
 
     (toc <- Sys.time() - tic)
 
-    ## Time difference of 0.277209 secs
+    ## Time difference of 0.3862691 secs
 
-That's 2,912 rows of text, or 42,708 words, in 0.28 seconds.
+That's 2,912 rows of text, or 42,708 words, in 0.39 seconds.

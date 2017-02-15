@@ -6,11 +6,13 @@ Authors@R: c(person("Tyler", "Rinker", email =
 Maintainer: Tyler Rinker <tyler.rinker@gmail.com>
 Description: Tools that stem and lemmatize text.  Stemming is a process
         that removes endings such as affixes.  Lemmatization is the
-        process of reducing words to base form.
+        process of grouping inflected forms together as a single base
+        form.
 Depends: R (>= 3.3.2)
-Imports: dplyr, hunspell, koRpus, lexicon, quanteda, SnowballC, textshape, utils
+Imports: dplyr, hunspell, koRpus, lexicon, quanteda, SnowballC,
+        textshape, utils
 Suggests: testthat
-Date: 2017-02-12
+Date: 2017-02-14
 License: GPL-2
 LazyData: TRUE
 Roxygen: list(wrap = FALSE)
