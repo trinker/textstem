@@ -62,8 +62,7 @@ make_lemma_dictionary <- function(..., engine = 'hunspell', path = NULL) {
             )
         },
         lexicon = {
-            out <- as.data.frame(dplyr::filter(lexicon::hash_lemmas[tokens],
-                !is.na(lemma)), stringsAsFactors = FALSE)
+            out <- as.data.frame(dplyr::filter(dplyr::tbl_df(lexicon::hash_lemmas), token %in%  tokens), stringsAsFactors = FALSE)
         },
         stop('`engine` must be one of: "hunspell", "treetragger", or "lexicon"')
     )
