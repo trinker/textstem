@@ -113,7 +113,7 @@ tree_tagger_location <- function(path = NULL) {
         path <- myPaths[file.exists(myPaths)]
     }
 
-    tt <- file.exists(path)|length(path) == 0
+    tt <- file.exists(path)
 
     if (!tt) {
         message("TreeTagger does not appear to be installed.\nWould you like me to open a download browser?")
