@@ -137,7 +137,7 @@ presidential_debates_2012$dialogue %>%
 ```
 
 
-That's `r nr` rows of text, or `r nw` in `r round(as.numeric(toc), 2)` seconds.
+That's `r nr` rows of text, or `r nw` words, in `r round(as.numeric(toc), 2)` seconds.
 
 
 
