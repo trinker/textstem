@@ -12,13 +12,17 @@ regex <- "(^Version:\\s+)(\\d+\\.\\d+\\.\\d+)"
 loc <- grep(regex, desc)
 ver <- gsub(regex, "\\2", desc[loc])
 verbadge <- sprintf('<a href="https://img.shields.io/badge/Version-%s-orange.svg"><img src="https://img.shields.io/badge/Version-%s-orange.svg" alt="Version"/></a></p>', ver, ver)
+
+pacman::p_load_current_gh('trinker/numform')
+nr <- numform::f_comma(length(presidential_debates_2012$dialogue))
+nw <- numform::f_comma(sum(stringi::stri_count_words(presidential_debates_2012$dialogue), na.rm = TRUE))
 ````
 
 [![Build Status](https://travis-ci.org/trinker/textstem.svg?branch=master)](https://travis-ci.org/trinker/textstem)
 [![Coverage Status](https://coveralls.io/repos/trinker/textstem/badge.svg?branch=master)](https://coveralls.io/r/trinker/textstem?branch=master)
 `r verbadge`
 
-**textstem** is a tool-set for stemming and lemmatizing words.  Stemming is a process that removes affixes.  Lemmatization is the process of reducing words to base form.
+**textstem** is a tool-set for stemming and lemmatizing words.  Stemming is a process that removes affixes.  Lemmatization is the process of reducing words to base form.  
 
 # Functions
 
@@ -51,3 +55,92 @@ You are welcome to:
 - submit suggestions and bug-reports at: <https://github.com/trinker/textstem/issues>    
 - send a pull request on: <https://github.com/trinker/textstem/>    
 - compose a friendly e-mail to: <tyler.rinker@gmail.com>    
+
+
+# Examples
+
+The following examples demonstrate some of the functionality of **textstem**.
+
+## Load the Tools/Data
+
+```{r, message=FALSE, warning=FALSE}
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(textstem, dplyr)
+
+data(presidential_debates_2012)
+```
+
+
+## Stemming
+
+Stemming is the act of removing inflections from a word not necessarily ["identical to the morphological root of the word" (wikipedia).](https://en.wikipedia.org/wiki/Stemming).  Below I show stemming of several small strings.
+
+```{r}
+y <- c(
+    'the dirtier dog has eaten the pies',
+    'that shameful pooch is tricky and sneaky',
+    "He opened and then reopened the food bag",
+    'There are skies of blue and red roses too!',
+    NA,
+    "The doggies, well they aren't joyfully running.",
+     "The daddies are coming over...",
+    "This is 34.546 above"
+)
+stem_strings(y)
+```
+
+## Lemmatizing
+
+Lemmatizing is the ["grouping together the inflected forms of a word so they can be analysed as a single item" (wikipedia)](https://en.wikipedia.org/wiki/Lemmatisation).  In the example below I reduce the strings to their lemma form.  `lemmatize_strings` uses a lookup dictionary.  The default uses [Mechura's (2016)](http://www.lexiconista.com) English lemmatization list. The `make_lemma_dictionary` function contains two additional engines for generating a lemma lookup table for use in `lemmatize_strings`.
+
+
+```{r}
+y <- c(
+    'the dirtier dog has eaten the pies',
+    'that shameful pooch is tricky and sneaky',
+    "He opened and then reopened the food bag",
+    'There are skies of blue and red roses too!',
+    NA,
+    "The doggies, well they aren't joyfully running.",
+     "The daddies are coming over...",
+    "This is 34.546 above"
+)
+lemmatize_strings(y)
+```
+
+This lemmatization uses the [**hunspell**](https://CRAN.R-project.org/package=hunspell) package to generate lemmas.
+
+
+```{r}
+lemma_dictionary_hs <- make_lemma_dictionary(y, engine = 'hunspell')
+lemmatize_strings(y, dictionary = lemma_dictionary_hs)
+```
+
+This lemmatization uses the [**koRpus**](https://CRAN.R-project.org/package=koRpus) package and the [TreeTagger](http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/) program to generate lemmas.
+
+```{r}
+lemma_dictionary_tt <- make_lemma_dictionary(y, engine = 'treetagger')
+lemmatize_strings(y, lemma_dictionary_tt)
+```
+
+
+It's pretty fast too.  Observe:
+
+```{r}
+tic <- Sys.time()
+
+presidential_debates_2012$dialogue %>%
+    lemmatize_strings() %>%
+    head()
+
+(toc <- Sys.time() - tic)
+```
+
+
+That's `r nr` rows of text, or `r nw` in `r round(as.numeric(toc), 2)` seconds.
+
+
+
+
+
+

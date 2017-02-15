@@ -13,7 +13,9 @@
 #' x <- c("the", 'doggies', ',', 'well', 'they', 'aren\'t', 'Joyfully', 'running', '.')
 #' stem_words(x)
 stem_words <- function(x, language = "porter", ...) {
-    stem(x, language = language)
+    out <- stem(x, language = language)
+    out[is.na(x)] <- NA
+    out
 }
 
 
