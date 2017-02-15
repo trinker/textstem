@@ -114,7 +114,7 @@ Stemming
 
 Stemming is the act of removing inflections from a word not necessarily
 ["identical to the morphological root of the word"
-(wikipedia).](https://en.wikipedia.org/wiki/Stemming). Below I show
+(wikipedia)](https://en.wikipedia.org/wiki/Stemming). Below I show
 stemming of several small strings.
 
     y <- c(
@@ -223,6 +223,6 @@ It's pretty fast too. Observe:
 
     (toc <- Sys.time() - tic)
 
-    ## Time difference of 0.3862691 secs
+    ## Time difference of 0.3507619 secs
 
-That's 2,912 rows of text, or 42,708 words, in 0.39 seconds.
+That's 2,912 rows of text, or 42,708 words, in 0.35 seconds.

@@ -73,7 +73,7 @@ data(presidential_debates_2012)
 
 ## Stemming
 
-Stemming is the act of removing inflections from a word not necessarily ["identical to the morphological root of the word" (wikipedia).](https://en.wikipedia.org/wiki/Stemming).  Below I show stemming of several small strings.
+Stemming is the act of removing inflections from a word not necessarily ["identical to the morphological root of the word" (wikipedia)](https://en.wikipedia.org/wiki/Stemming).  Below I show stemming of several small strings.
 
 ```{r}
 y <- c(
