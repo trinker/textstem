@@ -110,10 +110,11 @@ tree_tagger_location <- function(path = NULL) {
             "~/Library/TreeTagger", "C:\\PROGRA~1\\TreeTagger",
             "C:/TreeTagger")
 
-        path <- myPaths[file.exists(myPaths)]
+        path <- myPaths[file.exists(myPaths)][1]
+        
     }
-
-    tt <- file.exists(path)
+    
+    tt <- length(path) == 1 && file.exists(path)
 
     if (!tt) {
         message("TreeTagger does not appear to be installed.\nWould you like me to open a download browser?")
