@@ -53,9 +53,9 @@ stem_strings <- function(x, language = "porter", ...) {
 
     stemmed <- textshape::split_index(stem_words(unlist(tokens), language = language), locs)
     stemmed[na_locs] <- x[na_locs]
-    stemmed[!na_locs] <- unlist(lapply(stemmed[!na_locs],function(x) {
-        gsub("(\\s+)([.!?,;:])", "\\2", paste(x, collapse = " "), perl = TRUE)
-    }))
+    stemmed[!na_locs] <- gsub("(\\s+)([.!?,;:])", "\\2",
+        unlist(lapply(stemmed[!na_locs], paste, collapse = " ")), perl = TRUE)
+
     unlist(stemmed)
 }
 

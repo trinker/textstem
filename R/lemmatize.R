@@ -90,9 +90,9 @@ lemmatize_strings <- function(x, dictionary = lexicon::hash_lemmas, ...) {
 
     lemmatized <- textshape::split_index(lemmatize_words(unlist(tokens), dictionary = dictionary), locs)
     lemmatized[na_locs] <- x[na_locs]
-    lemmatized[!na_locs] <- unlist(lapply(lemmatized[!na_locs],function(x) {
-        gsub("(\\s+)([.!?,;:])", "\\2", paste(x, collapse = " "), perl = TRUE)
-    }))
+    lemmatized[!na_locs] <- gsub("(\\s+)([.!?,;:])", "\\2",
+        unlist(lapply(lemmatized[!na_locs], paste, collapse = " ")), perl = TRUE)
+
     unlist(lemmatized)
 }
 
