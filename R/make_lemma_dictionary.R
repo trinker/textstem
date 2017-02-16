@@ -62,8 +62,7 @@ make_lemma_dictionary <- function(..., engine = 'hunspell', path = NULL) {
             )
         },
         lexicon = {
-            out <- as.data.frame(dplyr::filter(lexicon::hash_lemmas[tokens],
-                !is.na(lemma)), stringsAsFactors = FALSE)
+            out <- as.data.frame(dplyr::filter(dplyr::tbl_df(lexicon::hash_lemmas), token %in%  tokens), stringsAsFactors = FALSE)
         },
         stop('`engine` must be one of: "hunspell", "treetragger", or "lexicon"')
     )
@@ -110,10 +109,11 @@ tree_tagger_location <- function(path = NULL) {
             "~/Library/TreeTagger", "C:\\PROGRA~1\\TreeTagger",
             "C:/TreeTagger")
 
-        path <- myPaths[file.exists(myPaths)]
+        path <- myPaths[file.exists(myPaths)][1]
+        
     }
-
-    tt <- file.exists(path)|length(path) == 0
+    
+    tt <- length(path) == 1 && file.exists(path)
 
     if (!tt) {
         message("TreeTagger does not appear to be installed.\nWould you like me to open a download browser?")
