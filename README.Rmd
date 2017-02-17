@@ -70,6 +70,24 @@ pacman::p_load(textstem, dplyr)
 data(presidential_debates_2012)
 ```
 
+## Stemming Versus Lemmatizing
+
+Before moving into the meat these two examples highlight the difference between stemming and lemmatizing.
+
+```{r}
+dw <- c('driver', 'drive', 'drove', 'driven', 'drives', 'driving')
+
+stem_words(dw)
+lemmatize_words(dw)
+```
+
+```{r}
+bw <- c('are', 'am', 'being', 'been', 'be')
+
+stem_words(bw)
+lemmatize_words(bw)
+```
+
 
 ## Stemming
 
@@ -140,7 +158,20 @@ presidential_debates_2012$dialogue %>%
 That's `r nr` rows of text, or `r nw` words, in `r round(as.numeric(toc), 2)` seconds.
 
 
+## Combine With Other Text Tools
 
+This example shows how stemming/lemmatizing might be complemented by other test tools such as `replace_contraction`.
+
+```{r}
+library(textclean)
+
+'aren\'t' %>% 
+    lemmatize_strings()
+
+'aren\'t' %>% 
+    textclean::replace_contraction() %>%
+    lemmatize_strings()
+```
 
 
 

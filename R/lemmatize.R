@@ -18,6 +18,7 @@
 #' x <- c("the", NA, 'doggies', ',', 'well', 'they', 'aren\'t', 'Joyfully', 'running', '.')
 #' lemmatize_words(x)
 lemmatize_words <- function(x, dictionary = lexicon::hash_lemmas, ...) {
+    check_dictionary(dictionary)
     locs <- match(tolower(x), dictionary[[1]])
     x[!is.na(locs)] <- dictionary[locs[!is.na(locs)], ][[2]]
     x

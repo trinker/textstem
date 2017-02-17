@@ -21,8 +21,10 @@ Table of Contents
 -   [Contact](#contact)
 -   [Examples](#examples)
     -   [Load the Tools/Data](#load-the-toolsdata)
+    -   [Stemming Versus Lemmatizing](#stemming-versus-lemmatizing)
     -   [Stemming](#stemming)
     -   [Lemmatizing](#lemmatizing)
+    -   [Combine With Other Text Tools](#combine-with-other-text-tools)
 
 Functions
 ============
@@ -109,6 +111,32 @@ Load the Tools/Data
 
     data(presidential_debates_2012)
 
+Stemming Versus Lemmatizing
+---------------------------
+
+Before moving into the meat these two examples highlight the difference
+between stemming and lemmatizing.
+
+    dw <- c('driver', 'drive', 'drove', 'driven', 'drives', 'driving')
+
+    stem_words(dw)
+
+    ## [1] "driver" "drive"  "drove"  "driven" "drive"  "drive"
+
+    lemmatize_words(dw)
+
+    ## [1] "driver" "drive"  "drive"  "drive"  "drive"  "drive"
+
+    bw <- c('are', 'am', 'being', 'been', 'be')
+
+    stem_words(bw)
+
+    ## [1] "ar"   "am"   "be"   "been" "be"
+
+    lemmatize_words(bw)
+
+    ## [1] "be" "be" "be" "be" "be"
+
 Stemming
 --------
 
@@ -136,7 +164,7 @@ stemming of several small strings.
     ## [5] NA                                         
     ## [6] "The doggi, well thei aren't joyfulli run."
     ## [7] "The daddi ar come over..."                
-    ## [8] "Thi i 34.546 abov"
+    ## [8] "Thi i 34. 546 abov"
 
 Lemmatizing
 -----------
@@ -170,7 +198,7 @@ engines for generating a lemma lookup table for use in
     ## [5] NA                                         
     ## [6] "The doggy, good they aren't joyfully run."
     ## [7] "The daddy be come over..."                
-    ## [8] "This be 34.546 above"
+    ## [8] "This be 34. 546 above"
 
 This lemmatization uses the
 [**hunspell**](https://CRAN.R-project.org/package=hunspell) package to
@@ -186,7 +214,7 @@ generate lemmas.
     ## [5] NA                                           
     ## [6] "The doggy, well they aren't joyful running."
     ## [7] "The daddy are come over..."                 
-    ## [8] "This is 34.546 above"
+    ## [8] "This is 34. 546 above"
 
 This lemmatization uses the
 [**koRpus**](https://CRAN.R-project.org/package=koRpus) package and the
@@ -204,7 +232,7 @@ preferably in your machine's the root directory.
     ## [5] NA                                         
     ## [6] "The doggy, well they aren't joyfully run."
     ## [7] "The daddy be come over..."                
-    ## [8] "This be 34.546 above"
+    ## [8] "This be 34. 546 above"
 
 It's pretty fast too. Observe:
 
@@ -223,6 +251,33 @@ It's pretty fast too. Observe:
 
     (toc <- Sys.time() - tic)
 
-    ## Time difference of 0.3507619 secs
+    ## Time difference of 0.09208608 secs
 
-That's 2,912 rows of text, or 42,708 words, in 0.35 seconds.
+That's 2,912 rows of text, or 42,708 words, in 0.09 seconds.
+
+Combine With Other Text Tools
+-----------------------------
+
+This example shows how stemming/lemmatizing might be complemented by
+other test tools such as `replace_contraction`.
+
+    library(textclean)
+
+    ## 
+    ## Attaching package: 'textclean'
+
+    ## The following objects are masked from 'package:qdap':
+    ## 
+    ##     check_text, mgsub, replace_contraction, replace_number,
+    ##     replace_ordinal, replace_symbol, strip, sub_holder
+
+    'aren\'t' %>% 
+        lemmatize_strings()
+
+    ## [1] "aren't"
+
+    'aren\'t' %>% 
+        textclean::replace_contraction() %>%
+        lemmatize_strings()
+
+    ## [1] "be not"
