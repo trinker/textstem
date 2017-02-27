@@ -73,7 +73,7 @@ data(presidential_debates_2012)
 
 ## Stemming Versus Lemmatizing
 
-Before moving into the meat these two examples highlight the difference between stemming and lemmatizing.
+Before moving into the meat these two examples let's highlight the difference between stemming and lemmatizing.
 
 ```{r}
 dw <- c('driver', 'drive', 'drove', 'driven', 'drives', 'driving')
@@ -110,7 +110,7 @@ stem_strings(y)
 
 ## Lemmatizing
 
-Lemmatizing is the ["grouping together the inflected forms of a word so they can be analysed as a single item" (wikipedia)](https://en.wikipedia.org/wiki/Lemmatisation).  In the example below I reduce the strings to their lemma form.  `lemmatize_strings` uses a lookup dictionary.  The default uses [Mechura's (2016)](http://www.lexiconista.com) English lemmatization list. The `make_lemma_dictionary` function contains two additional engines for generating a lemma lookup table for use in `lemmatize_strings`.
+Lemmatizing is the ["grouping together the inflected forms of a word so they can be analysed as a single item" (wikipedia)](https://en.wikipedia.org/wiki/Lemmatisation).  In the example below I reduce the strings to their lemma form.  `lemmatize_strings` uses a lookup dictionary.  The default uses [Mechura's (2016)](http://www.lexiconista.com) English lemmatization list available from the [**lexicon**](https://cran.r-project.org/package=lexicon) package. The `make_lemma_dictionary` function contains two additional engines for generating a lemma lookup table for use in `lemmatize_strings`.
 
 
 ```{r}

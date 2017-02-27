@@ -117,8 +117,8 @@ Load the Tools/Data
 Stemming Versus Lemmatizing
 ---------------------------
 
-Before moving into the meat these two examples highlight the difference
-between stemming and lemmatizing.
+Before moving into the meat these two examples let's highlight the
+difference between stemming and lemmatizing.
 
     dw <- c('driver', 'drive', 'drove', 'driven', 'drives', 'driving')
 
@@ -178,9 +178,10 @@ they can be analysed as a single item"
 example below I reduce the strings to their lemma form.
 `lemmatize_strings` uses a lookup dictionary. The default uses
 [Mechura's (2016)](http://www.lexiconista.com) English lemmatization
-list. The `make_lemma_dictionary` function contains two additional
-engines for generating a lemma lookup table for use in
-`lemmatize_strings`.
+list available from the
+[**lexicon**](https://cran.r-project.org/package=lexicon) package. The
+`make_lemma_dictionary` function contains two additional engines for
+generating a lemma lookup table for use in `lemmatize_strings`.
 
     y <- c(
         'the dirtier dog has eaten the pies',
@@ -254,9 +255,9 @@ It's pretty fast too. Observe:
 
     (toc <- Sys.time() - tic)
 
-    ## Time difference of 0.122086 secs
+    ## Time difference of 0.09106207 secs
 
-That's 2,912 rows of text, or 42,708 words, in 0.12 seconds.
+That's 2,912 rows of text, or 42,708 words, in 0.09 seconds.
 
 Combine With Other Text Tools
 -----------------------------
