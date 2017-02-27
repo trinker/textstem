@@ -11,7 +11,7 @@ lemmatize_strings(x, dictionary = lexicon::hash_lemmas, ...)
 
 \item{dictionary}{A dictionary of base terms and lemmas to use for
 replacement.  The first column should be the full word form in lower case
-while the second column is the corresponding repalcement lemma. The default
+while the second column is the corresponding replacement lemma. The default
 makes the dictionary from the text using
 \code{\link[textstem]{make_lemma_dictionary}}.  For larger texts a
 dictionary may take some time to compute.  It may be more useful to generate

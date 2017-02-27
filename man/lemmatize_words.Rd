@@ -14,7 +14,7 @@ replacement.  The first column should be the full word form in lower case
 while the second column is the corresponding replacement lemma. The default
 uses \code{\link[lexicon]{hash_lemmas}}.  This may come from
 \code{\link[textstem]{make_lemma_dictionary}} as well, giving a more
-targetted, smaller dictionary.  \code{\link[textstem]{make_lemma_dictionary}}
+targeted, smaller dictionary.  \code{\link[textstem]{make_lemma_dictionary}}
 has choices in \code{engine}s to use for the lemmatization.}
 
 \item{\ldots}{ignored.}

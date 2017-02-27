@@ -251,9 +251,9 @@ It's pretty fast too. Observe:
 
     (toc <- Sys.time() - tic)
 
-    ## Time difference of 0.09208608 secs
+    ## Time difference of 0.1250899 secs
 
-That's 2,912 rows of text, or 42,708 words, in 0.09 seconds.
+That's 2,912 rows of text, or 42,708 words, in 0.13 seconds.
 
 Combine With Other Text Tools
 -----------------------------

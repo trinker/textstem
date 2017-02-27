@@ -8,7 +8,7 @@
 #' while the second column is the corresponding replacement lemma. The default
 #' uses \code{\link[lexicon]{hash_lemmas}}.  This may come from
 #' \code{\link[textstem]{make_lemma_dictionary}} as well, giving a more
-#' targetted, smaller dictionary.  \code{\link[textstem]{make_lemma_dictionary}}
+#' targeted, smaller dictionary.  \code{\link[textstem]{make_lemma_dictionary}}
 #' has choices in \code{engine}s to use for the lemmatization.
 #' @param \ldots ignored.
 #' @return Returns a vector of lemmatized words.
@@ -32,7 +32,7 @@ lemmatize_words <- function(x, dictionary = lexicon::hash_lemmas, ...) {
 #' @param x A vector of strings.
 #' @param dictionary A dictionary of base terms and lemmas to use for
 #' replacement.  The first column should be the full word form in lower case
-#' while the second column is the corresponding repalcement lemma. The default
+#' while the second column is the corresponding replacement lemma. The default
 #' makes the dictionary from the text using
 #' \code{\link[textstem]{make_lemma_dictionary}}.  For larger texts a
 #' dictionary may take some time to compute.  It may be more useful to generate
