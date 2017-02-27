@@ -9,7 +9,7 @@ developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repos
 Status](https://travis-ci.org/trinker/textstem.svg?branch=master)](https://travis-ci.org/trinker/textstem)
 [![Coverage
 Status](https://coveralls.io/repos/trinker/textstem/badge.svg?branch=master)](https://coveralls.io/r/trinker/textstem?branch=master)
-<a href="https://img.shields.io/badge/Version-0.0.1-orange.svg"><img src="https://img.shields.io/badge/Version-0.0.1-orange.svg" alt="Version"/></a>
+<a href="https://img.shields.io/badge/Version-0.1.0-orange.svg"><img src="https://img.shields.io/badge/Version-0.1.0-orange.svg" alt="Version"/></a>
 </p>
 **textstem** is a tool-set for stemming and lemmatizing words. Stemming
 is a process that removes affixes. Lemmatization is the process of
@@ -261,9 +261,9 @@ It's pretty fast too. Observe:
 
     (toc <- Sys.time() - tic)
 
-    ## Time difference of 0.09608579 secs
+    ## Time difference of 0.09005904 secs
 
-That's 2,912 rows of text, or 42,708 words, in 0.1 seconds.
+That's 2,912 rows of text, or 42,708 words, in 0.09 seconds.
 
 Combine With Other Text Tools
 -----------------------------
