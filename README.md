@@ -2,6 +2,9 @@ textstem   [![Follow](https://img.shields.io/twitter/follow/tylerrinker.svg?styl
 ============
 
 
+[![Project Status: Active - The project has reached a stable, usable
+state and is being actively
+developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
 [![Build
 Status](https://travis-ci.org/trinker/textstem.svg?branch=master)](https://travis-ci.org/trinker/textstem)
 [![Coverage
@@ -251,7 +254,7 @@ It's pretty fast too. Observe:
 
     (toc <- Sys.time() - tic)
 
-    ## Time difference of 0.1150808 secs
+    ## Time difference of 0.122086 secs
 
 That's 2,912 rows of text, or 42,708 words, in 0.12 seconds.
 
