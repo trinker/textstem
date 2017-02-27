@@ -25,6 +25,8 @@ Table of Contents
 -   [Examples](#examples)
     -   [Load the Tools/Data](#load-the-toolsdata)
     -   [Stemming Versus Lemmatizing](#stemming-versus-lemmatizing)
+        -   ["Drive" Stemming vs. Lemmatizing](#drive-stemming-vs-lemmatizing)
+        -   ["Be" Stemming vs. Lemmatizing](#be-stemming-vs-lemmatizing)
     -   [Stemming](#stemming)
     -   [Lemmatizing](#lemmatizing)
     -   [Combine With Other Text Tools](#combine-with-other-text-tools)
@@ -120,6 +122,8 @@ Stemming Versus Lemmatizing
 Before moving into the meat these two examples let's highlight the
 difference between stemming and lemmatizing.
 
+### "Drive" Stemming vs. Lemmatizing
+
     dw <- c('driver', 'drive', 'drove', 'driven', 'drives', 'driving')
 
     stem_words(dw)
@@ -129,6 +133,8 @@ difference between stemming and lemmatizing.
     lemmatize_words(dw)
 
     ## [1] "driver" "drive"  "drive"  "drive"  "drive"  "drive"
+
+### "Be" Stemming vs. Lemmatizing
 
     bw <- c('are', 'am', 'being', 'been', 'be')
 
@@ -255,9 +261,9 @@ It's pretty fast too. Observe:
 
     (toc <- Sys.time() - tic)
 
-    ## Time difference of 0.09106207 secs
+    ## Time difference of 0.09608579 secs
 
-That's 2,912 rows of text, or 42,708 words, in 0.09 seconds.
+That's 2,912 rows of text, or 42,708 words, in 0.1 seconds.
 
 Combine With Other Text Tools
 -----------------------------

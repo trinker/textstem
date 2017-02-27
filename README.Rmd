@@ -75,12 +75,16 @@ data(presidential_debates_2012)
 
 Before moving into the meat these two examples let's highlight the difference between stemming and lemmatizing.
 
+### "Drive" Stemming vs. Lemmatizing
+
 ```{r}
 dw <- c('driver', 'drive', 'drove', 'driven', 'drives', 'driving')
 
 stem_words(dw)
 lemmatize_words(dw)
 ```
+
+### "Be" Stemming vs. Lemmatizing
 
 ```{r}
 bw <- c('are', 'am', 'being', 'been', 'be')
