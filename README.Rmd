@@ -21,6 +21,7 @@ nw <- numform::f_comma(sum(stringi::stri_count_words(presidential_debates_2012$d
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
 [![Build Status](https://travis-ci.org/trinker/textstem.svg?branch=master)](https://travis-ci.org/trinker/textstem)
 [![Coverage Status](https://coveralls.io/repos/trinker/textstem/badge.svg?branch=master)](https://coveralls.io/r/trinker/textstem?branch=master)
+[![](http://cranlogs.r-pkg.org/badges/textstem)](https://cran.r-project.org/package=textstem)
 `r verbadge`
 
 **textstem** is a tool-set for stemming and lemmatizing words.  Stemming is a process that removes affixes.   Lemmatization is the process of grouping inflected forms together as a single base form.  
