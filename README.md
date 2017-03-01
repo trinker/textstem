@@ -270,7 +270,7 @@ Combine With Other Text Tools
 -----------------------------
 
 This example shows how stemming/lemmatizing might be complemented by
-other test tools such as `replace_contraction`.
+other text tools such as `replace_contraction` from the **textclean** package.
 
     library(textclean)
 
