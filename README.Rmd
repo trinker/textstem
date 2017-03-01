@@ -114,6 +114,7 @@ stem_strings(y)
 ```
 
 ## Lemmatizing
+### Default Lemma Dictionary
 
 Lemmatizing is the ["grouping together the inflected forms of a word so they can be analysed as a single item" (wikipedia)](https://en.wikipedia.org/wiki/Lemmatisation).  In the example below I reduce the strings to their lemma form.  `lemmatize_strings` uses a lookup dictionary.  The default uses [Mechura's (2016)](http://www.lexiconista.com) English lemmatization list available from the [**lexicon**](https://cran.r-project.org/package=lexicon) package. The `make_lemma_dictionary` function contains two additional engines for generating a lemma lookup table for use in `lemmatize_strings`.
 
@@ -131,6 +132,7 @@ y <- c(
 )
 lemmatize_strings(y)
 ```
+### Hunspell Lemma Dictionary
 
 This lemmatization uses the [**hunspell**](https://CRAN.R-project.org/package=hunspell) package to generate lemmas.
 
@@ -140,6 +142,8 @@ lemma_dictionary_hs <- make_lemma_dictionary(y, engine = 'hunspell')
 lemmatize_strings(y, dictionary = lemma_dictionary_hs)
 ```
 
+### koRpus Lemma Dictionary
+
 This lemmatization uses the [**koRpus**](https://CRAN.R-project.org/package=koRpus) package and the [TreeTagger](http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/) program to generate lemmas.  You'll have to get TreeTagger set up, preferably in your machine's root directory.
 
 ```{r}
@@ -147,6 +151,7 @@ lemma_dictionary_tt <- make_lemma_dictionary(y, engine = 'treetagger')
 lemmatize_strings(y, lemma_dictionary_tt)
 ```
 
+### Lemmatization Speed
 
 It's pretty fast too.  Observe:
 
