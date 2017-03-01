@@ -231,7 +231,7 @@ This lemmatization uses the
 [**koRpus**](https://CRAN.R-project.org/package=koRpus) package and the
 [TreeTagger](http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/)
 program to generate lemmas. You'll have to get TreeTagger set up,
-preferably in your machine's the root directory.
+preferably in your machine's root directory.
 
     lemma_dictionary_tt <- make_lemma_dictionary(y, engine = 'treetagger')
     lemmatize_strings(y, lemma_dictionary_tt)
