@@ -140,7 +140,7 @@ lemma_dictionary_hs <- make_lemma_dictionary(y, engine = 'hunspell')
 lemmatize_strings(y, dictionary = lemma_dictionary_hs)
 ```
 
-This lemmatization uses the [**koRpus**](https://CRAN.R-project.org/package=koRpus) package and the [TreeTagger](http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/) program to generate lemmas.  You'll have to get TreeTagger set up, preferably in your machine's the root directory.
+This lemmatization uses the [**koRpus**](https://CRAN.R-project.org/package=koRpus) package and the [TreeTagger](http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/) program to generate lemmas.  You'll have to get TreeTagger set up, preferably in your machine's root directory.
 
 ```{r}
 lemma_dictionary_tt <- make_lemma_dictionary(y, engine = 'treetagger')
