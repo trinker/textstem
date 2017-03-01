@@ -179,6 +179,9 @@ stemming of several small strings.
 Lemmatizing
 -----------
 
+Default Lemma Dictionary
+------------------------
+
 Lemmatizing is the ["grouping together the inflected forms of a word so
 they can be analysed as a single item"
 (wikipedia)](https://en.wikipedia.org/wiki/Lemmatisation). In the
@@ -211,6 +214,9 @@ generating a lemma lookup table for use in `lemmatize_strings`.
     ## [7] "The daddy be come over..."                
     ## [8] "This be 34. 546 above"
 
+Hunspell Lemma Dictionary
+-------------------------
+
 This lemmatization uses the
 [**hunspell**](https://CRAN.R-project.org/package=hunspell) package to
 generate lemmas.
@@ -226,6 +232,9 @@ generate lemmas.
     ## [6] "The doggy, well they aren't joyful running."
     ## [7] "The daddy are come over..."                 
     ## [8] "This is 34. 546 above"
+
+koRpus Lemma Dictionary
+-----------------------
 
 This lemmatization uses the
 [**koRpus**](https://CRAN.R-project.org/package=koRpus) package and the
@@ -244,6 +253,9 @@ preferably in your machine's root directory.
     ## [6] "The doggy, well they aren't joyfully run."
     ## [7] "The daddy be come over..."                
     ## [8] "This be 34. 546 above"
+
+Lemmatization Speed
+-------------------
 
 It's pretty fast too. Observe:
 
