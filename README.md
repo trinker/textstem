@@ -30,6 +30,10 @@ Table of Contents
         -   ["Be" Stemming vs. Lemmatizing](#be-stemming-vs-lemmatizing)
     -   [Stemming](#stemming)
     -   [Lemmatizing](#lemmatizing)
+        -   [Default Lemma Dictionary](#default-lemma-dictionary)
+        -   [Hunspell Lemma Dictionary](#hunspell-lemma-dictionary)
+        -   [koRpus Lemma Dictionary](#korpus-lemma-dictionary)
+        -   [Lemmatization Speed](#lemmatization-speed)
     -   [Combine With Other Text Tools](#combine-with-other-text-tools)
 
 Functions
@@ -179,8 +183,7 @@ stemming of several small strings.
 Lemmatizing
 -----------
 
-Default Lemma Dictionary
-------------------------
+### Default Lemma Dictionary
 
 Lemmatizing is the ["grouping together the inflected forms of a word so
 they can be analysed as a single item"
@@ -214,8 +217,7 @@ generating a lemma lookup table for use in `lemmatize_strings`.
     ## [7] "The daddy be come over..."                
     ## [8] "This be 34. 546 above"
 
-Hunspell Lemma Dictionary
--------------------------
+### Hunspell Lemma Dictionary
 
 This lemmatization uses the
 [**hunspell**](https://CRAN.R-project.org/package=hunspell) package to
@@ -233,8 +235,7 @@ generate lemmas.
     ## [7] "The daddy are come over..."                 
     ## [8] "This is 34. 546 above"
 
-koRpus Lemma Dictionary
------------------------
+### koRpus Lemma Dictionary
 
 This lemmatization uses the
 [**koRpus**](https://CRAN.R-project.org/package=koRpus) package and the
@@ -254,8 +255,7 @@ preferably in your machine's root directory.
     ## [7] "The daddy be come over..."                
     ## [8] "This be 34. 546 above"
 
-Lemmatization Speed
--------------------
+### Lemmatization Speed
 
 It's pretty fast too. Observe:
 
@@ -274,17 +274,26 @@ It's pretty fast too. Observe:
 
     (toc <- Sys.time() - tic)
 
-    ## Time difference of 0.09005904 secs
+    ## Time difference of 0.1350951 secs
 
-That's 2,912 rows of text, or 42,708 words, in 0.09 seconds.
+That's 2,912 rows of text, or 42,708 words, in 0.14 seconds.
 
 Combine With Other Text Tools
 -----------------------------
 
 This example shows how stemming/lemmatizing might be complemented by
-other text tools such as `replace_contraction` from the **textclean** package.
+other text tools such as `replace_contraction` from the **textclean**
+package.
 
     library(textclean)
+
+    ## 
+    ## Attaching package: 'textclean'
+
+    ## The following objects are masked from 'package:qdap':
+    ## 
+    ##     check_text, mgsub, replace_contraction, replace_number,
+    ##     replace_ordinal, replace_symbol, strip, sub_holder
 
     'aren\'t' %>% 
         lemmatize_strings()
