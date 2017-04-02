@@ -12,6 +12,7 @@ Status](https://coveralls.io/repos/trinker/textstem/badge.svg?branch=master)](ht
 [![](http://cranlogs.r-pkg.org/badges/textstem)](https://cran.r-project.org/package=textstem)
 <a href="https://img.shields.io/badge/Version-0.1.0-orange.svg"><img src="https://img.shields.io/badge/Version-0.1.0-orange.svg" alt="Version"/></a>
 </p>
+
 **textstem** is a tool-set for stemming and lemmatizing words. Stemming
 is a process that removes affixes. Lemmatization is the process of
 grouping inflected forms together as a single base form.
