@@ -23,4 +23,3 @@ Stem a vector of words.
 \seealso{
 \code{\link[textstem]{stem_strings}}
 }
-

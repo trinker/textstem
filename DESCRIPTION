@@ -12,10 +12,10 @@ Depends: R (>= 3.3.2)
 Imports: dplyr, hunspell, koRpus, lexicon (>= 0.1.1), quanteda,
         SnowballC, textshape, utils
 Suggests: testthat
-Date: 2017-03-01
+Date: 2017-04-14
 License: GPL-2
 LazyData: TRUE
 Roxygen: list(wrap = FALSE)
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 URL: http://github.com/trinker/textstem
 BugReports: http://github.com/trinker/textstem/issues

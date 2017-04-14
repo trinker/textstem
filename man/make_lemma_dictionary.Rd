@@ -39,4 +39,3 @@ make_lemma_dictionary(x)
 make_lemma_dictionary(x, engine = 'treetagger')
 }
 }
-

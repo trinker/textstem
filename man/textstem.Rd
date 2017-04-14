@@ -2,8 +2,8 @@
 % Please edit documentation in R/textstem-package.R
 \docType{package}
 \name{textstem}
-\alias{package-textstem}
 \alias{textstem}
+\alias{package-textstem}
 \alias{textstem-package}
 \title{Tools for Stemming and Lemmatizing Text}
 \description{
@@ -11,4 +11,3 @@ Tools that stem and lemmatize text.  Stemming is a process that removes
 endings such as suffixes.  Lemmatization is the process of grouping 
 inflected forms together as a single base form.
 }
-

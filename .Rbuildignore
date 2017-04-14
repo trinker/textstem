@@ -16,7 +16,9 @@ README.R
 travis.yml
 inst/maintenance.R
 Thumb.db
-inst/textstem_logo
+tools/textstem_logo/r_textstema.png
+tools/textstem_logo/r_textstem.pptx
+tools/textstem_logo/resize_icon.txt
 inst/staticdocs
 inst/extra_statdoc
 

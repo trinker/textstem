@@ -73,4 +73,3 @@ presidential_debates_2012$dialogue \%>\%
 \seealso{
 \code{\link[textstem]{lemmatize_words}}
 }
-

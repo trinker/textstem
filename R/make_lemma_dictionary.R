@@ -110,9 +110,9 @@ tree_tagger_location <- function(path = NULL) {
             "C:/TreeTagger")
 
         path <- myPaths[file.exists(myPaths)][1]
-        
+
     }
-    
+
     tt <- length(path) == 1 && file.exists(path)
 
     if (!tt) {

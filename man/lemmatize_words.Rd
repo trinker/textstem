@@ -28,4 +28,3 @@ Lemmatize a vector of words.
 \seealso{
 \code{\link[textstem]{lemmatize_strings}}
 }
-

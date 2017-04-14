@@ -12,6 +12,9 @@ Status](https://coveralls.io/repos/trinker/textstem/badge.svg?branch=master)](ht
 [![](http://cranlogs.r-pkg.org/badges/textstem)](https://cran.r-project.org/package=textstem)
 <a href="https://img.shields.io/badge/Version-0.1.0-orange.svg"><img src="https://img.shields.io/badge/Version-0.1.0-orange.svg" alt="Version"/></a>
 </p>
+
+![](tools/textstem_logo/r_textstem.png)
+
 **textstem** is a tool-set for stemming and lemmatizing words. Stemming
 is a process that removes affixes. Lemmatization is the process of
 grouping inflected forms together as a single base form.
@@ -274,9 +277,9 @@ It's pretty fast too. Observe:
 
     (toc <- Sys.time() - tic)
 
-    ## Time difference of 0.1350951 secs
+    ## Time difference of 0.1491189 secs
 
-That's 2,912 rows of text, or 42,708 words, in 0.14 seconds.
+That's 2,912 rows of text, or 42,708 words, in 0.15 seconds.
 
 Combine With Other Text Tools
 -----------------------------

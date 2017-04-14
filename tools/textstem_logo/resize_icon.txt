@@ -1,0 +1,2 @@
+cd C:\Users\Tyler\GitHub\textstem\tools\textstem_logo
+ffmpeg -i r_textstema.png -vf scale=250:-1 r_textstem.png

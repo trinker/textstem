@@ -24,6 +24,8 @@ nw <- numform::f_comma(sum(stringi::stri_count_words(presidential_debates_2012$d
 [![](http://cranlogs.r-pkg.org/badges/textstem)](https://cran.r-project.org/package=textstem)
 `r verbadge`
 
+![](tools/textstem_logo/r_textstem.png)
+
 **textstem** is a tool-set for stemming and lemmatizing words.  Stemming is a process that removes affixes.   Lemmatization is the process of grouping inflected forms together as a single base form.  
 
 # Functions

@@ -41,4 +41,3 @@ stem_strings(x)
 \seealso{
 \code{\link[textstem]{stem_words}}
 }
-
