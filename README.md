@@ -277,9 +277,9 @@ It's pretty fast too. Observe:
 
     (toc <- Sys.time() - tic)
 
-    ## Time difference of 0.1491189 secs
+    ## Time difference of 0.1020591 secs
 
-That's 2,912 rows of text, or 42,708 words, in 0.15 seconds.
+That's 2,912 rows of text, or 42,708 words, in 0.1 seconds.
 
 Combine With Other Text Tools
 -----------------------------
@@ -289,14 +289,6 @@ other text tools such as `replace_contraction` from the **textclean**
 package.
 
     library(textclean)
-
-    ## 
-    ## Attaching package: 'textclean'
-
-    ## The following objects are masked from 'package:qdap':
-    ## 
-    ##     check_text, mgsub, replace_contraction, replace_number,
-    ##     replace_ordinal, replace_symbol, strip, sub_holder
 
     'aren\'t' %>% 
         lemmatize_strings()
