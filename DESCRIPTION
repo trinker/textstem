@@ -9,7 +9,7 @@ Description: Tools that stem and lemmatize text.  Stemming is a process
         process of grouping inflected forms together as a single base
         form.
 Depends: R (>= 3.3.2)
-Imports: dplyr, hunspell, koRpus, lexicon (>= 0.1.1), quanteda,
+Imports: dplyr, hunspell, koRpus (>= 0.10-2), lexicon (>= 0.1.1), quanteda,
         SnowballC, textshape, utils
 Suggests: testthat
 Date: 2017-04-14
