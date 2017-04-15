@@ -60,7 +60,7 @@ stem_strings <- function(x, language = "porter", ...) {
     stemmed[!na_locs] <- gsub("(\\s+)([.!?,;:])", "\\2",
         unlist(lapply(stemmed[!na_locs], paste, collapse = " ")), perl = TRUE)
 
-    x2$unhold(unlist(lemmatized))
+    x2$unhold(unlist(stemmed))
 }
 
 stem <- function(x, language = "porter") SnowballC::wordStem(x, language)

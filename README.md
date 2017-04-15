@@ -181,7 +181,7 @@ stemming of several small strings.
     ## [5] NA                                         
     ## [6] "The doggi, well thei aren't joyfulli run."
     ## [7] "The daddi ar come over..."                
-    ## [8] "Thi i 34. 546 abov"
+    ## [8] "Thi i 34.546 abov"
 
 Lemmatizing
 -----------
@@ -277,9 +277,9 @@ It's pretty fast too. Observe:
 
     (toc <- Sys.time() - tic)
 
-    ## Time difference of 0.884613 secs
+    ## Time difference of 0.6289792 secs
 
-That's 2,912 rows of text, or 42,708 words, in 0.88 seconds.
+That's 2,912 rows of text, or 42,708 words, in 0.63 seconds.
 
 Combine With Other Text Tools
 -----------------------------
