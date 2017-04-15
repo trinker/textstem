@@ -10,7 +10,7 @@ Status](https://travis-ci.org/trinker/textstem.svg?branch=master)](https://travi
 [![Coverage
 Status](https://coveralls.io/repos/trinker/textstem/badge.svg?branch=master)](https://coveralls.io/r/trinker/textstem?branch=master)
 [![](http://cranlogs.r-pkg.org/badges/textstem)](https://cran.r-project.org/package=textstem)
-<a href="https://img.shields.io/badge/Version-0.1.0-orange.svg"><img src="https://img.shields.io/badge/Version-0.1.0-orange.svg" alt="Version"/></a>
+<a href="https://img.shields.io/badge/Version-0.1.1-orange.svg"><img src="https://img.shields.io/badge/Version-0.1.1-orange.svg" alt="Version"/></a>
 </p>
 
 ![](tools/textstem_logo/r_textstem.png)
@@ -218,7 +218,7 @@ generating a lemma lookup table for use in `lemmatize_strings`.
     ## [5] NA                                         
     ## [6] "The doggy, good they aren't joyfully run."
     ## [7] "The daddy be come over..."                
-    ## [8] "This be 34. 546 above"
+    ## [8] "This be 34.546 above"
 
 ### Hunspell Lemma Dictionary
 
@@ -236,7 +236,7 @@ generate lemmas.
     ## [5] NA                                           
     ## [6] "The doggy, well they aren't joyful running."
     ## [7] "The daddy are come over..."                 
-    ## [8] "This is 34. 546 above"
+    ## [8] "This is 34.546 above"
 
 ### koRpus Lemma Dictionary
 
@@ -256,7 +256,7 @@ preferably in your machine's root directory.
     ## [5] NA                                         
     ## [6] "The doggy, well they aren't joyfully run."
     ## [7] "The daddy be come over..."                
-    ## [8] "This be 34. 546 above"
+    ## [8] "This be 34.546 above"
 
 ### Lemmatization Speed
 
@@ -277,9 +277,9 @@ It's pretty fast too. Observe:
 
     (toc <- Sys.time() - tic)
 
-    ## Time difference of 0.1020591 secs
+    ## Time difference of 0.884613 secs
 
-That's 2,912 rows of text, or 42,708 words, in 0.1 seconds.
+That's 2,912 rows of text, or 42,708 words, in 0.88 seconds.
 
 Combine With Other Text Tools
 -----------------------------
@@ -289,6 +289,14 @@ other text tools such as `replace_contraction` from the **textclean**
 package.
 
     library(textclean)
+
+    ## 
+    ## Attaching package: 'textclean'
+
+    ## The following objects are masked from 'package:qdap':
+    ## 
+    ##     check_text, mgsub, replace_contraction, replace_number,
+    ##     replace_ordinal, replace_symbol, strip, sub_holder
 
     'aren\'t' %>% 
         lemmatize_strings()

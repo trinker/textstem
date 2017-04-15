@@ -22,6 +22,10 @@ textstem 0.1.0 -
 
 BUG FIXES
 
+* `lemmatize_strings` and `stem_strings` would split numbers with decimals
+  rather than treating it as a single token.  This issue has been corrected
+  (see issue #3).
+
 NEW FEATURES
 
 MINOR FEATURES

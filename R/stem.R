@@ -48,7 +48,11 @@ stem_words <- function(x, language = "porter", ...) {
 stem_strings <- function(x, language = "porter", ...) {
 
     na_locs <- is.na(x)
-    tokens <- textshape::split_token(x, lower = FALSE, ...)
+
+    numbs <- stats::na.omit(unique(unlist(stringi::stri_extract_all_regex(x, numreg))))
+    x2 <- textclean::sub_holder(x, numbs)
+    tokens <- textshape::split_token(x2[['output']], lower = FALSE, ...)
+
     locs <- textshape::starts(sapply(tokens, length))[-1]
 
     stemmed <- textshape::split_index(stem_words(unlist(tokens), language = language), locs)
@@ -56,7 +60,7 @@ stem_strings <- function(x, language = "porter", ...) {
     stemmed[!na_locs] <- gsub("(\\s+)([.!?,;:])", "\\2",
         unlist(lapply(stemmed[!na_locs], paste, collapse = " ")), perl = TRUE)
 
-    unlist(stemmed)
+    x2$unhold(unlist(lemmatized))
 }
 
 stem <- function(x, language = "porter") SnowballC::wordStem(x, language)

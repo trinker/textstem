@@ -86,15 +86,20 @@ lemmatize_words <- function(x, dictionary = lexicon::hash_lemmas, ...) {
 lemmatize_strings <- function(x, dictionary = lexicon::hash_lemmas, ...) {
 
     na_locs <- is.na(x)
-    tokens <- textshape::split_token(x, lower = FALSE, ...)
+
+    numbs <- stats::na.omit(unique(unlist(stringi::stri_extract_all_regex(x, numreg))))
+    x2 <- textclean::sub_holder(x, numbs)
+    tokens <- textshape::split_token(x2[['output']], lower = FALSE, ...)
+
     locs <- textshape::starts(sapply(tokens, length))[-1]
 
     lemmatized <- textshape::split_index(lemmatize_words(unlist(tokens), dictionary = dictionary), locs)
+
     lemmatized[na_locs] <- x[na_locs]
     lemmatized[!na_locs] <- gsub("(\\s+)([.!?,;:])", "\\2",
         unlist(lapply(lemmatized[!na_locs], paste, collapse = " ")), perl = TRUE)
 
-    unlist(lemmatized)
+    x2$unhold(unlist(lemmatized))
 }
 
 

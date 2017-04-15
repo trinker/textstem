@@ -13,6 +13,7 @@ loc <- grep(regex, desc)
 ver <- gsub(regex, "\\2", desc[loc])
 verbadge <- sprintf('<a href="https://img.shields.io/badge/Version-%s-orange.svg"><img src="https://img.shields.io/badge/Version-%s-orange.svg" alt="Version"/></a></p>', ver, ver)
 
+pacman::p_load(textstem)
 pacman::p_load_current_gh('trinker/numform')
 nr <- numform::f_comma(length(presidential_debates_2012$dialogue))
 nw <- numform::f_comma(sum(stringi::stri_count_words(presidential_debates_2012$dialogue), na.rm = TRUE))
