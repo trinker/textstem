@@ -15,7 +15,7 @@
 #' @export
 #' @seealso \code{\link[textstem]{lemmatize_strings}}
 #' @examples
-#' x <- c("the", NA, 'doggies', ',', 'well', 'they', 'aren\'t', 'Joyfully', 'running', '.')
+#' x <- c("the", NA, 'doggies', ',', 'well', 'they', "aren\'t", 'Joyfully', 'running', '.')
 #' lemmatize_words(x)
 lemmatize_words <- function(x, dictionary = lexicon::hash_lemmas, ...) {
     check_dictionary(dictionary)

@@ -1,4 +1,4 @@
-textstem   [![Follow](https://img.shields.io/twitter/follow/tylerrinker.svg?style=social)](https://twitter.com/intent/follow?screen_name=tylerrinker)
+textstem   
 ============
 
 
@@ -10,8 +10,9 @@ Status](https://travis-ci.org/trinker/textstem.svg?branch=master)](https://travi
 [![Coverage
 Status](https://coveralls.io/repos/trinker/textstem/badge.svg?branch=master)](https://coveralls.io/r/trinker/textstem?branch=master)
 [![](http://cranlogs.r-pkg.org/badges/textstem)](https://cran.r-project.org/package=textstem)
-<a href="https://img.shields.io/badge/Version-0.1.1-orange.svg"><img src="https://img.shields.io/badge/Version-0.1.1-orange.svg" alt="Version"/></a>
+<a href="https://img.shields.io/badge/Version-0.1.2-orange.svg"><img src="https://img.shields.io/badge/Version-0.1.2-orange.svg" alt="Version"/></a>
 </p>
+
 
 ![](tools/textstem_logo/r_textstem.png)
 
@@ -277,9 +278,9 @@ It's pretty fast too. Observe:
 
     (toc <- Sys.time() - tic)
 
-    ## Time difference of 0.631444 secs
+    ## Time difference of 0.9228051 secs
 
-That's 2,912 rows of text, or 42,708 words, in 0.63 seconds.
+That's 2,912 rows of text, or 42,708 words, in 0.92 seconds.
 
 Combine With Other Text Tools
 -----------------------------

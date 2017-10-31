@@ -25,6 +25,10 @@ Returns a vector of lemmatized words.
 \description{
 Lemmatize a vector of words.
 }
+\examples{
+x <- c("the", NA, 'doggies', ',', 'well', 'they', "aren\\'t", 'Joyfully', 'running', '.')
+lemmatize_words(x)
+}
 \seealso{
 \code{\link[textstem]{lemmatize_strings}}
 }

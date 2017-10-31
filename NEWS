@@ -17,7 +17,7 @@ And constructed with the following guidelines:
 * Bug fixes and misc changes bumps the patch
 
 
-textstem 0.1.0 -
+textstem 0.1.0 - 0.1.2
 ----------------------------------------------------------------
 
 BUG FIXES
@@ -26,13 +26,7 @@ BUG FIXES
   rather than treating it as a single token.  This issue has been corrected
   (see issue #3).
 
-NEW FEATURES
 
-MINOR FEATURES
-
-IMPROVEMENTS
-
-CHANGES
 
 textstem 0.0.1
 ----------------------------------------------------------------

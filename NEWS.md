@@ -17,7 +17,7 @@ And constructed with the following guidelines:
 * Bug fixes and misc changes bumps the patch
 
 
-textstem 0.1.0 -
+textstem 0.1.0 - 0.1.2
 ----------------------------------------------------------------
 
 **BUG FIXES**
@@ -26,13 +26,7 @@ textstem 0.1.0 -
   rather than treating it as a single token.  This issue has been corrected
   (see <a href="https://github.com/trinker/textstem/issues/3">issue #3</a>).
 
-**NEW FEATURES**
 
-**MINOR FEATURES**
-
-**IMPROVEMENTS**
-
-**CHANGES**
 
 textstem 0.0.1
 ----------------------------------------------------------------
