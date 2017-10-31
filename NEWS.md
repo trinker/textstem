@@ -19,6 +19,22 @@ And constructed with the following guidelines:
 
 
 
+textstem 0.2.0 - 
+----------------------------------------------------------------
+
+**BUG FIXES**
+
+**NEW FEATURES**
+
+**MINOR FEATURES**
+
+**IMPROVEMENTS**
+
+**CHANGES**
+
+
+
+
 textstem 0.1.0 - 0.1.2
 ----------------------------------------------------------------
 
