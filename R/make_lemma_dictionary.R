@@ -29,7 +29,7 @@
 make_lemma_dictionary <- function(..., engine = 'hunspell', path = NULL) {
 
     lemma <- token <- NULL
-    tokens <- na_omit(unique(unlist(quanteda::tokenize(tolower(unlist(...))))))
+    tokens <- na_omit(unique(unlist(quanteda::tokens(tolower(unlist(...))))))
 
     switch(engine,
         treetagger = {
