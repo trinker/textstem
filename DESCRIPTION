@@ -10,9 +10,10 @@ Description: Tools that stem and lemmatize text.  Stemming is a process
         form.
 Depends: R (>= 3.3.2)
 Imports: dplyr, hunspell, koRpus (>= 0.10-2), lexicon (>= 0.1.1),
-        quanteda, SnowballC, stats, stringi, textclean, textshape, utils
+        quanteda, SnowballC, stats, stringi, textclean, textshape,
+        utils
 Suggests: testthat
-Date: 2017-04-15
+Date: 2018-03-27
 License: GPL-2
 LazyData: TRUE
 Roxygen: list(wrap = FALSE)
