@@ -10,7 +10,7 @@
 #' @export
 #' @seealso \code{\link[textstem]{stem_strings}}
 #' @examples
-#' x <- c("the", 'doggies', ',', 'well', 'they', 'aren\'t', 'Joyfully', 'running', '.')
+#' x <- c("the", 'doggies', ',', 'well', 'they', "aren\'t", 'Joyfully', 'running', '.')
 #' stem_words(x)
 stem_words <- function(x, language = "porter", ...) {
     out <- stem(x, language = language)

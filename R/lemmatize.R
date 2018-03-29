@@ -15,7 +15,7 @@
 #' @export
 #' @seealso \code{\link[textstem]{lemmatize_strings}}
 #' @examples
-#' x <- c("the", NA, 'doggies', ',', 'well', 'they', 'aren\'t', 'Joyfully', 'running', '.')
+#' x <- c("the", NA, 'doggies', ',', 'well', 'they', "aren\'t", 'Joyfully', 'running', '.')
 #' lemmatize_words(x)
 lemmatize_words <- function(x, dictionary = lexicon::hash_lemmas, ...) {
     check_dictionary(dictionary)
@@ -36,7 +36,7 @@ lemmatize_words <- function(x, dictionary = lexicon::hash_lemmas, ...) {
 #' makes the dictionary from the text using
 #' \code{\link[textstem]{make_lemma_dictionary}}.  For larger texts a
 #' dictionary may take some time to compute.  It may be more useful to generate
-#' the dictionary prior to running the unction and explicitly pass the
+#' the dictionary prior to running the function and explicitly pass the
 #' dictionary in.
 #' @param \ldots Other arguments passed to \code{\link[textshape]{split_token}}.
 #' @return Returns a vector of lemmatized strings.

@@ -20,6 +20,10 @@ Returns a vector of stemmed words.
 \description{
 Stem a vector of words.
 }
+\examples{
+x <- c("the", 'doggies', ',', 'well', 'they', "aren\\'t", 'Joyfully', 'running', '.')
+stem_words(x)
+}
 \seealso{
 \code{\link[textstem]{stem_strings}}
 }

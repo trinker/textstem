@@ -15,7 +15,7 @@ while the second column is the corresponding replacement lemma. The default
 makes the dictionary from the text using
 \code{\link[textstem]{make_lemma_dictionary}}.  For larger texts a
 dictionary may take some time to compute.  It may be more useful to generate
-the dictionary prior to running the unction and explicitly pass the
+the dictionary prior to running the function and explicitly pass the
 dictionary in.}
 
 \item{\ldots}{Other arguments passed to \code{\link[textshape]{split_token}}.}

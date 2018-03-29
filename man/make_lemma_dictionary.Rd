@@ -4,7 +4,9 @@
 \alias{make_lemma_dictionary}
 \title{Generate a Lemma Dictionary}
 \usage{
-make_lemma_dictionary(..., engine = "hunspell", path = NULL)
+make_lemma_dictionary(..., engine = "hunspell", path = NULL,
+  lang = switch(engine, hunspell = {     "en_US" }, treetagger = {     "en" },
+  lexicon = {     NULL }, stop("engine not found")))
 }
 \arguments{
 \item{engine}{One of: "hunspell", "treetragger" or "lexicon".  The lexicon and hunspell choices use
@@ -17,6 +19,13 @@ program (\url{http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger}.}
 \item{path}{Path to the TreeTagger program if \code{engine = "treetagger"}.
 If \code{NULL} \code{textstem} will attempt to locate the location of
 TreeTagger.}
+
+\item{lang}{A character string naming the language to be used in \pkg{koRpus}
+(treetagger) or \pkg{hunspell}.  The default language is \code{'en'} for
+\pkg{koRpus} (treetagger) and  \code{'en_US'} for \pkg{hunspell}.  See
+\code{?koRpus::treetag} or \code{?hunspell::dictionary} for details.  Note
+that for \code{koRpus::treetag} \code{lang} is passed to both \code{lang} and
+\code{prest} in the \code{TT.options} argument.}
 
 \item{\ldots}{A vector of texts to generate lemmas for.}
 }

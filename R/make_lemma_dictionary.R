@@ -13,9 +13,16 @@
 #' @param path Path to the TreeTagger program if \code{engine = "treetagger"}.
 #' If \code{NULL} \code{textstem} will attempt to locate the location of
 #' TreeTagger.
+#' @param lang A character string naming the language to be used in \pkg{koRpus}
+#' (treetagger) or \pkg{hunspell}.  The default language is \code{'en'} for
+#' \pkg{koRpus} (treetagger) and  \code{'en_US'} for \pkg{hunspell}.  See
+#' \code{?koRpus::treetag} or \code{?hunspell::dictionary} for details.  Note
+#' that for \code{koRpus::treetag} \code{lang} is passed to both \code{lang} and
+#' \code{prest} in the \code{TT.options} argument.
 #' @return Returns a two column \code{\link[base]{data.frame}} with tokens and
 #' corresponding lemmas.
 #' @export
+#' @importFrom koRpus.lang.en lang.support.en
 #' @examples
 #' x <- c('the dirtier dog has eaten the pies',
 #'     'that shameful pooch is tricky and sneaky',
@@ -26,10 +33,12 @@
 #' \dontrun{
 #' make_lemma_dictionary(x, engine = 'treetagger')
 #' }
-make_lemma_dictionary <- function(..., engine = 'hunspell', path = NULL) {
+make_lemma_dictionary <- function(..., engine = 'hunspell', path = NULL,
+    lang = switch(engine, hunspell = {'en_US'}, treetagger = {'en'},
+        lexicon = {NULL}, stop('engine not found'))) {
 
     lemma <- token <- NULL
-    tokens <- na_omit(unique(unlist(quanteda::tokenize(tolower(unlist(...))))))
+    tokens <- na_omit(unique(unlist(quanteda::tokens(tolower(unlist(...))))))
 
     switch(engine,
         treetagger = {
@@ -37,11 +46,11 @@ make_lemma_dictionary <- function(..., engine = 'hunspell', path = NULL) {
 
             tagged.results <- suppressMessages(koRpus::treetag(
                 unlist(tokens),
-                treetagger="manual",
-                format="obj",
-                TT.tknz=FALSE ,
-                lang="en",
-                TT.options=list(path=path, preset="en")
+                treetagger = "manual",
+                format = "obj",
+                TT.tknz = FALSE ,
+                lang = lang,
+                TT.options = list(path = path, preset = lang)
             ))
 
             out <- dplyr::rename(dplyr::arrange(dplyr::distinct(dplyr::filter(
@@ -51,9 +60,12 @@ make_lemma_dictionary <- function(..., engine = 'hunspell', path = NULL) {
         },
         hunspell = {
             out <- unlist(Map(function(y, x){
-                if (length(y) == 0 | (length(x) == 1 && x %in% keeps)) return(NA)
-                y[length(y)]
-            }, hunspell::hunspell_stem(tokens), tokens))
+                    if (length(y) == 0 | (length(x) == 1 && x %in% keeps)) return(NA)
+                    y[length(y)]
+                },
+                hunspell::hunspell_stem(tokens, dict = hunspell::dictionary(lang)),
+                tokens
+            ))
 
             out <- data.frame(
                 token = tokens[!out == tokens & !is.na(out)],
@@ -71,32 +83,32 @@ make_lemma_dictionary <- function(..., engine = 'hunspell', path = NULL) {
 
 keeps <- c('then')
 
-
-tree_tagger_location <- function(path = NULL) {
-
-    if (is.null(path)){
-        myPaths <- c("TreeTagger",  "~/.cabal/bin/TreeTagger",
-            "~/Library/TreeTagger", "C:\\PROGRA~1\\TreeTagger",
-            "C:/TreeTagger")
-
-        path <- myPaths[file.exists(myPaths)]
-    }
-
-    tt <- file.exists(path)|length(path) == 0
-
-    if (!tt) {
-        message("TreeTagger does not appear to be installed.\nWould you like me to open a download browser?")
-        ans <- utils::menu(c("Yes", "No"))
-
-        if (ans == 1) {
-            utils::browseURL("http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/#Windows")
-            stop("Retry after downloading TreeTagger or setting `path` to the correct location.")
-        } else {
-            stop('Download tagger from: "http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger"\nand place in the root director')
-        }
-    }
-    path
-}
+#
+# tree_tagger_location <- function(path = NULL) {
+#
+#     if (is.null(path)){
+#         myPaths <- c("TreeTagger",  "~/.cabal/bin/TreeTagger",
+#             "~/Library/TreeTagger", "C:\\PROGRA~1\\TreeTagger",
+#             "C:/TreeTagger")
+#
+#         path <- myPaths[file.exists(myPaths)]
+#     }
+#
+#     tt <- file.exists(path)|length(path) == 0
+#
+#     if (!tt) {
+#         message("TreeTagger does not appear to be installed.\nWould you like me to open a download browser?")
+#         ans <- utils::menu(c("Yes", "No"))
+#
+#         if (ans == 1) {
+#             utils::browseURL("http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/#Windows")
+#             stop("Retry after downloading TreeTagger or setting `path` to the correct location.")
+#         } else {
+#             stop('Download tagger from: "http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger"\nand place in the root director')
+#         }
+#     }
+#     path
+# }
 
 
 

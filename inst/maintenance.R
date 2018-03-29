@@ -1,7 +1,7 @@
 #========
 # BUILD
 #========
-source("inst/build.R")
+update_date(); update_news(); source("inst/build.R")
 
 #==========================
 # Run unit tests
@@ -13,10 +13,6 @@ devtools::test()
 #==========================
 rmarkdown::render("README.Rmd", "all"); md_toc()
 
-#==========================
-# UPDATE NEWS
-#==========================
-update_news()
 
 #==========================
 # UPDATE VERSION
