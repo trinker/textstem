@@ -102,4 +102,26 @@ lemmatize_strings <- function(x, dictionary = lexicon::hash_lemmas, ...) {
     x2$unhold(unlist(lemmatized))
 }
 
+#' Performs fast lemmatisation of the text
+#' @return The text with replacemnets
+#' @param text A vector of stroings
+#' @param dictionary If NULL it will perform stemming. If else, a data frame with (word,replacement) as
+fastLemma = function(text,dictionary = NULL){
+  splitted = text %>% stringr::str_split(pattern = " ") 
+  if (is.null(dictionary)) {
+    unique_words = splitted %>% unlist() %>% unique()
+    lemmatised_words = textstem::lemmatize_words(unique_words)
+    dictionary = data.table(word = unique_words,replacement = lemmatised_words)
+    dictionary = dictionary[word != replacement]
+    
+  }
+  
+  hashed_dict = hashmap(dictionary$word, dictionary$replacement)
+  hashed_dict$cache_keys()
+  # Do the actual replacement
+  lapply(splitted,function(x) ifelse(x %in% hashed_dict$keys(),hashed_dict[[x]],x)) %>% lapply(function(x) paste0(x,collapse = " ")) %>% unlist
+  
+}
+
+
 
